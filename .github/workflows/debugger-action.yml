@@ -1,7 +1,7 @@
 name: debugger-action
 on: workflow_dispatch
 jobs: 
-  debugger-action:
+  debugger-action-job:
     runs-on: ubuntu-latest
     steps:
       - run: touch /tmp/keepalive
