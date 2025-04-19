@@ -2,7 +2,7 @@ name: debugger-action
 on: workflow_dispatch
 jobs: 
  debugger-action-job:
-  runs-on: ubuntu-latest
+ runs-on: ubuntu-latest
   steps:
   - name: Maximize Build Space
     uses: easimon/maximize-build-space@master
@@ -16,4 +16,3 @@ jobs:
   - run: touch /tmp/keepalive
   - name: Setup Debug Session
     uses: csexton/debugger-action@master
-#aaa
