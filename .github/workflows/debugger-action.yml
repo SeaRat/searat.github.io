@@ -1,9 +1,18 @@
 name: debugger-action
 on: workflow_dispatch
 jobs: 
-  debugger-action-job:
-    runs-on: ubuntu-latest
-    steps:
-      - run: touch /tmp/keepalive
-      - name: Setup Debug Session
-        uses: csexton/debugger-action@master
+ debugger-action-job:
+  runs-on: ubuntu-latest
+   steps:
+    - name: Maximize Build Space
+      uses: easimon/maximize-build-space@master
+      with:
+       remove-dotnet: 'true'
+       remove-android: 'true'
+       remove-haskell: 'true'
+       remove-codeql: 'true'
+       remove-docker-images: 'true'
+
+    - run: touch /tmp/keepalive
+    - name: Setup Debug Session
+      uses: csexton/debugger-action@master
